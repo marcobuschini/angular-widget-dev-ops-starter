@@ -1,6 +1,8 @@
-[![Build Status](https://travis-ci.org/marcobuschini/parking-widget.svg?branch=master)](https://travis-ci.org/marcobuschini/parking-widget)
-[![Coverage Status](https://coveralls.io/repos/github/marcobuschini/parking-widget/badge.svg)](https://coveralls.io/github/marcobuschini/parking-widget)
-[![Documentation](https://img.shields.io/badge/docs-read-brightgreen)](https://marcobuschini.github.io/parking-widget/index.html)
+[![Unit Testing](https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/unittest.yml/badge.svg)](https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/unittest.yml)
+[![Building](https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/build.yml/badge.svg)](https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/marcobuschini/angular-widget-dev-ops-starter/badge.svg)](https://coveralls.io/github/marcobuschini/angular-widget-dev-ops-starter)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/maintainability)](https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/test_coverage)](https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/test_coverage)
 [![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen)](http://commitizen.github.io/cz-cli/)
 
 # Parking Widget

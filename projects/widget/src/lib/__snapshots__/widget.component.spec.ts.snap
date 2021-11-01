@@ -1,0 +1,376 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WidgetComponent should create component with hidden slots, then show, then hide back 1`] = `
+<mlb-parking-widget
+  buying={[Function EventEmitter_]}
+  features={[Function Array]}
+  features$={[Function Subscriber]}
+  parkingSlots={[Function Array]}
+  parkingSlots$={[Function Subscriber]}
+  service={[Function WidgetService]}
+  showDetails={[Function Array]}
+  vendor={[Function Object]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator"
+  >
+    <mat-card-title
+      class="mat-card-title"
+    >
+      Test Vendor
+    </mat-card-title>
+    <mat-card-subtitle
+      class="mat-card-subtitle"
+    >
+      This is a test vendor
+    </mat-card-subtitle>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <mat-list
+        class="mat-list mat-list-base"
+        role="list"
+      >
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 1 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 2 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 3 
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <mat-divider
+        aria-orientation="horizontal"
+        class="mat-divider mat-divider-horizontal"
+        role="separator"
+      />
+      <div
+        fxlayout.gt-xs="row"
+        fxlayout.lt-sm="column"
+        fxlayoutalign="space-between"
+      >
+        <div>
+           Slot 1 
+          <button
+            mat-stroked-button=""
+          >
+             Add to cart 
+          </button>
+          <button
+            mat-stroked-button=""
+          >
+             Expand 
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mlb-parking-widget>
+`;
+
+exports[`WidgetComponent should create component with hidden slots, then show, then hide back 2`] = `
+<mlb-parking-widget
+  buying={[Function EventEmitter_]}
+  features={[Function Array]}
+  features$={[Function Subscriber]}
+  parkingSlots={[Function Array]}
+  parkingSlots$={[Function Subscriber]}
+  service={[Function WidgetService]}
+  showDetails={[Function Array]}
+  vendor={[Function Object]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator"
+  >
+    <mat-card-title
+      class="mat-card-title"
+    >
+      Test Vendor
+    </mat-card-title>
+    <mat-card-subtitle
+      class="mat-card-subtitle"
+    >
+      This is a test vendor
+    </mat-card-subtitle>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <mat-list
+        class="mat-list mat-list-base"
+        role="list"
+      >
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 1 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 2 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 3 
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <mat-divider
+        aria-orientation="horizontal"
+        class="mat-divider mat-divider-horizontal"
+        role="separator"
+      />
+      <div
+        fxlayout.gt-xs="row"
+        fxlayout.lt-sm="column"
+        fxlayoutalign="space-between"
+      >
+        <div>
+           Slot 1 
+          <button
+            mat-stroked-button=""
+          >
+             Add to cart 
+          </button>
+          <button
+            mat-stroked-button=""
+          >
+             Collapse 
+          </button>
+          <mat-list
+            class="mat-list mat-list-base"
+            role="list"
+          >
+            <mat-list-item
+              class="mat-list-item mat-focus-indicator"
+              role="listitem"
+            >
+              <div
+                class="mat-list-item-content"
+              >
+                <div
+                  class="mat-list-item-ripple mat-ripple"
+                  mat-ripple=""
+                />
+                <div
+                  class="mat-list-text"
+                />
+                Feature 1 
+              </div>
+            </mat-list-item>
+            <mat-list-item
+              class="mat-list-item mat-focus-indicator"
+              role="listitem"
+            >
+              <div
+                class="mat-list-item-content"
+              >
+                <div
+                  class="mat-list-item-ripple mat-ripple"
+                  mat-ripple=""
+                />
+                <div
+                  class="mat-list-text"
+                />
+                Feature 2 
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mlb-parking-widget>
+`;
+
+exports[`WidgetComponent should create component with hidden slots, then show, then hide back 3`] = `
+<mlb-parking-widget
+  buying={[Function EventEmitter_]}
+  features={[Function Array]}
+  features$={[Function Subscriber]}
+  parkingSlots={[Function Array]}
+  parkingSlots$={[Function Subscriber]}
+  service={[Function WidgetService]}
+  showDetails={[Function Array]}
+  vendor={[Function Object]}
+>
+  <mat-card
+    class="mat-card mat-focus-indicator"
+  >
+    <mat-card-title
+      class="mat-card-title"
+    >
+      Test Vendor
+    </mat-card-title>
+    <mat-card-subtitle
+      class="mat-card-subtitle"
+    >
+      This is a test vendor
+    </mat-card-subtitle>
+    <mat-card-content
+      class="mat-card-content"
+    >
+      <mat-list
+        class="mat-list mat-list-base"
+        role="list"
+      >
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 1 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 2 
+          </div>
+        </mat-list-item>
+        <mat-list-item
+          class="mat-list-item mat-focus-indicator"
+          role="listitem"
+        >
+          <div
+            class="mat-list-item-content"
+          >
+            <div
+              class="mat-list-item-ripple mat-ripple"
+              mat-ripple=""
+            />
+            <div
+              class="mat-list-text"
+            />
+            Feature 3 
+          </div>
+        </mat-list-item>
+      </mat-list>
+      <mat-divider
+        aria-orientation="horizontal"
+        class="mat-divider mat-divider-horizontal"
+        role="separator"
+      />
+      <div
+        fxlayout.gt-xs="row"
+        fxlayout.lt-sm="column"
+        fxlayoutalign="space-between"
+      >
+        <div>
+           Slot 1 
+          <button
+            mat-stroked-button=""
+          >
+             Add to cart 
+          </button>
+          <button
+            mat-stroked-button=""
+          >
+             Expand 
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mlb-parking-widget>
+`;

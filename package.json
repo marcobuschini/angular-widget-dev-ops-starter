@@ -1,0 +1,68 @@
+{
+  "name": "parking-widget",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build widget",
+    "test": "npx jest --coverage",
+    "test:ci": "npx jest --coverage --coverageReporters lcovonly",
+    "lint": "ng lint",
+    "compodoc": "compodoc -p projects/widget/tsconfig.lib.json --theme material --output docs",
+    "e2e": "ng e2e"
+  },
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "^12.2.11",
+    "@angular/cdk": "~12.2.11",
+    "@angular/common": "^12.2.11",
+    "@angular/compiler": "^12.2.11",
+    "@angular/core": "^12.2.11",
+    "@angular/flex-layout": "^12.0.0-beta.35",
+    "@angular/forms": "^12.2.11",
+    "@angular/material": "~12.2.11",
+    "@angular/platform-browser": "^12.2.11",
+    "@angular/platform-browser-dynamic": "^12.2.11",
+    "@angular/router": "^12.2.11",
+    "rxjs": "^6.5.5",
+    "tslib": "^1.11.1",
+    "zone.js": "^0.10.3"
+  },
+  "devDependencies": {
+    "@angular-builders/jest": "^12.1.2",
+    "@angular-devkit/build-angular": "^12.2.11",
+    "@angular-devkit/build-ng-packagr": "0.1002.0",
+    "@angular/cli": "^12.2.11",
+    "@angular/compiler-cli": "^12.2.11",
+    "@angular/language-service": "^12.2.11",
+    "@compodoc/compodoc": "^1.1.11",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^12.12.37",
+    "codelyzer": "^5.2.2",
+    "commitizen": "^4.0.4",
+    "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.1.0",
+    "husky": "^4.2.15",
+    "jest": "^27.3.1",
+    "jest-html-reporters": "^2.1.6",
+    "jest-junit": "^13.0.0",
+    "jest-preset-angular": "^10.1.0",
+    "ng-packagr": "^12.2.5",
+    "pretty-quick": "^3.0.0",
+    "ts-jest": "^27.0.7",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "npx pretty-quick --staged && ng lint && npm run test",
+      "pre-push": "ng build"
+    }
+  }
+}

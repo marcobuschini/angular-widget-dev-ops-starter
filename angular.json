@@ -19,8 +19,7 @@
             "production": {
               "tsConfig": "projects/widget/tsconfig.lib.prod.json"
             }
-          },
-          "aot": false
+          }
         },
         "test": {
           "builder": "@angular-builders/jest:run",

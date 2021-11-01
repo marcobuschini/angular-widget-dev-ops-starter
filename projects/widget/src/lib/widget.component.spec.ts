@@ -44,11 +44,10 @@ describe('WidgetComponent', () => {
     },
   ]
 
-  function setTimeoutPromise(milliseconds: number): Promise<void> {
-    return new Promise(resolve => {
+  const setTimeoutPromise = (milliseconds: number): Promise<void> =>
+    new Promise(resolve => {
       setTimeout(resolve, milliseconds)
     })
-  }
 
   beforeEach(async () => {
     TestBed.configureTestingModule({

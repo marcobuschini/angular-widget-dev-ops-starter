@@ -23,6 +23,10 @@ export class WidgetComponent implements OnInit, OnDestroy {
   @Input()
   public vendor: Vendor
 
+  /** This output property signals what parking slot we want to buy. */
+  @Output()
+  public buying = new EventEmitter<ParkingSlot>()
+
   /** The array of `ParkingSlots` to be shown in the widget. */
   public parkingSlots: ParkingSlot[]
 
@@ -40,10 +44,6 @@ export class WidgetComponent implements OnInit, OnDestroy {
 
   /** The subscription that loads vendor features from the backend. */
   private features$: Subscription
-
-  /** This output property signals what parking slot we want to buy. */
-  @Output()
-  public buying = new EventEmitter<ParkingSlot>()
 
   /** The constructor injects the `WidgetService` in the component. */
   public constructor(

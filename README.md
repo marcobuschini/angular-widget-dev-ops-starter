@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/marcobuschini/angular-widget-dev-ops-starter/badge.svg)](https://coveralls.io/github/marcobuschini/angular-widget-dev-ops-starter)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/maintainability)](https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/test_coverage)](https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/test_coverage)
+[![Documentation](https://img.shields.io/badge/docs-read-brightgreen)](https://marcobuschini.github.io/angular-widget-dev-ops-starter/index.html)
 [![Commitizen Friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen)](http://commitizen.github.io/cz-cli/)
 
 # Parking Widget

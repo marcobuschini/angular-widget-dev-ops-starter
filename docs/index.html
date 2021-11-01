@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css" media="(prefers-color-scheme: dark)">
         <link rel="stylesheet" href="./styles/material.css">
     </head>
     <body>
@@ -31,9 +32,12 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<p><a href="https://travis-ci.org/marcobuschini/parking-widget"><img src="https://travis-ci.org/marcobuschini/parking-widget.svg?branch=master" alt="Build Status" class="img-responsive"></a>
-<a href="https://coveralls.io/github/marcobuschini/parking-widget"><img src="https://coveralls.io/repos/github/marcobuschini/parking-widget/badge.svg" alt="Coverage Status" class="img-responsive"></a>
-<a href="https://marcobuschini.github.io/parking-widget/index.html"><img src="https://img.shields.io/badge/docs-read-brightgreen" alt="Documentation" class="img-responsive"></a>
+<p><a href="https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/unittest.yml"><img src="https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/unittest.yml/badge.svg" alt="Unit Testing" class="img-responsive"></a>
+<a href="https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/build.yml"><img src="https://github.com/marcobuschini/angular-widget-dev-ops-starter/actions/workflows/build.yml/badge.svg" alt="Building" class="img-responsive"></a>
+<a href="https://coveralls.io/github/marcobuschini/angular-widget-dev-ops-starter"><img src="https://coveralls.io/repos/github/marcobuschini/angular-widget-dev-ops-starter/badge.svg" alt="Coverage Status" class="img-responsive"></a>
+<a href="https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/maintainability"><img src="https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/maintainability" alt="Maintainability" class="img-responsive"></a>
+<a href="https://codeclimate.com/github/marcobuschini/angular-widget-dev-ops-starter/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a8b29b00981e11b00195/test_coverage" alt="Test Coverage" class="img-responsive"></a>
+<a href="https://marcobuschini.github.io/angular-widget-dev-ops-starter/index.html"><img src="https://img.shields.io/badge/docs-read-brightgreen" alt="Documentation" class="img-responsive"></a>
 <a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen" alt="Commitizen Friendly" class="img-responsive"></a></p>
 <h1 id="parking-widget">Parking Widget</h1>
 <h2 id="specificaions">Specificaions</h2>
@@ -110,14 +114,14 @@ files ZIP archive and unpack it into the <code>projects/widget/assets/i18n/</cod
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -138,9 +142,9 @@ files ZIP archive and unpack it into the <code>projects/widget/assets/i18n/</cod
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { WidgetComponent } from './widget.component'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list'
@@ -22,7 +22,7 @@ import { CommonModule } from '@angular/common'
   ],
 })
 export class WidgetModule {
-  static forRoot(): ModuleWithProviders<WidgetModule> {
+  public static forRoot(): ModuleWithProviders<WidgetModule> {
     return {
       ngModule: WidgetModule,
     } as ModuleWithProviders<WidgetModule>

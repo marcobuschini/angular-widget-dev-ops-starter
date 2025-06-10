@@ -11,12 +11,19 @@ import { ParkingSlot } from './parkingslot'
 import { Feature } from './feature'
 import { Subscription } from 'rxjs'
 import { Vendor } from './vendor'
-
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatListModule } from '@angular/material/list'
 /** The parking widget as described in the repository. */
 @Component({
   selector: 'mlb-parking-widget',
   templateUrl: 'widget.component.html',
   styleUrls: ['widget.component.css'],
+  imports: [
+    MatCardModule,
+    MatDividerModule,
+    MatListModule,
+  ]
 })
 export class WidgetComponent implements OnInit, OnDestroy {
   /** This input property receives the `Vendor` to display in the widget. */

@@ -10,22 +10,12 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/widget/tsconfig.lib.json",
-            "project": "projects/widget/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/widget/tsconfig.lib.prod.json"
-            }
-          }
+          "builder": "@angular-devkit/build-angular:ng-packagr"
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
             "main": "projects/widget/src/test.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
@@ -44,9 +34,7 @@
       }
     }
   },
-  "defaultProject": "widget",
   "cli": {
-    "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "analytics": "2a77c529-1e4f-47be-8028-b14a5633a5f8"
   }
 }

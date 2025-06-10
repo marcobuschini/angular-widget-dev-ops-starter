@@ -1,30 +1,33 @@
 import {
   ComponentFixture,
   TestBed,
-  async as realAsync,
-  fakeAsync,
-  flush,
-  flushMicrotasks,
 } from '@angular/core/testing'
+
+import { expect, jest } from '@jest/globals'
 
 import { WidgetComponent } from './widget.component'
 import { Vendor } from './vendor'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { of, Observable } from 'rxjs'
+import { provideHttpClientTesting } from '@angular/common/http/testing'
+import { of } from 'rxjs'
 import { ParkingSlot } from './parkingslot'
-import { Feature } from './feature'
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
-import { By } from '@angular/platform-browser'
+import { BrowserModule, By } from '@angular/platform-browser'
+import { provideHttpClient } from '@angular/common/http'
+import { WidgetModule } from './widget.module'
+import { WidgetService } from './widget.service'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
+import { MatButtonModule } from '@angular/material/button'
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent
   let fixture: ComponentFixture<WidgetComponent>
 
-  let vendorSpy: jest.SpyInstance<Observable<Feature[]>>
-  let slotsSpy: jest.SpyInstance<Observable<ParkingSlot[]>>
-  let addSpy: jest.SpyInstance<void, [ParkingSlot?]>
+  let vendorSpy: any
+  let slotsSpy: any
+  let addSpy: any
 
   const dummyVendor: Vendor = {
     name: 'Test Vendor',
@@ -50,20 +53,29 @@ describe('WidgetComponent', () => {
     })
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      declarations: [WidgetComponent],
+    await TestBed.configureTestingModule({
       imports: [
+        CommonModule,
+        MatButtonModule,
         MatCardModule,
         MatDividerModule,
         MatListModule,
-        HttpClientTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        WidgetModule,
+        WidgetComponent,
       ],
-    })
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        WidgetService,
+      ]
+    }).compileComponents()
+    fixture = TestBed.createComponent(WidgetComponent)
+    component = fixture.componentInstance
   })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetComponent)
-    component = fixture.componentInstance
     component.vendor = dummyVendor
     vendorSpy = jest
       .spyOn(component.service, 'getVendorFeatures')
@@ -72,6 +84,7 @@ describe('WidgetComponent', () => {
       .spyOn(component.service, 'getParkingSlots')
       .mockReturnValue(of(dummySlots))
     addSpy = jest.spyOn(component.buying, 'emit')
+    component.ngOnInit()
 
     fixture.detectChanges()
   })
@@ -82,7 +95,7 @@ describe('WidgetComponent', () => {
 
   it(
     'should create component with hidden slots, then show, then hide back',
-    realAsync(async () => {
+    async () => {
       expect(component).toBeTruthy()
 
       component.ngOnInit()
@@ -109,7 +122,7 @@ describe('WidgetComponent', () => {
       await setTimeoutPromise(1000)
 
       expect(fixture).toMatchSnapshot()
-    })
+    }
   )
 
   it('should add to cart', () => {

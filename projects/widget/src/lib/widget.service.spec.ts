@@ -1,4 +1,4 @@
-import { TestBed, inject, fakeAsync, flush } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing'
 
 import { WidgetService } from './widget.service'
 import {
@@ -33,8 +33,8 @@ describe('WidgetService', () => {
       providers: [
         WidgetService,
         provideHttpClient(),
-        provideHttpClientTesting()
-      ]
+        provideHttpClientTesting(),
+      ],
     })
   })
 
@@ -68,7 +68,7 @@ describe('WidgetService', () => {
 
   it('should load a vendor parking slots', () => {
     const service = TestBed.inject(WidgetService)
-    service.getParkingSlots(dummyVendor).subscribe(slots => {
+    service.getParkingSlots(dummyVendor).subscribe((slots) => {
       expect(slots).toEqual(dummyParkingSlots)
     })
 

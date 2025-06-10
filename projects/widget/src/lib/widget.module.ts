@@ -1,5 +1,5 @@
-import { NgModule, ModuleWithProviders, Injector } from '@angular/core'
-import { WidgetComponent } from './widget.component'
+import { NgModule, ModuleWithProviders } from '@angular/core'
+
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { MatListModule } from '@angular/material/list'

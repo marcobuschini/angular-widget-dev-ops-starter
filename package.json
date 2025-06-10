@@ -8,7 +8,8 @@
     "test:ci": "npx jest --coverage --coverageReporters lcovonly",
     "lint": "npx ng lint",
     "compodoc": "npx compodoc -p projects/widget/tsconfig.lib.json --theme material --output docs",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "husky init"
   },
   "private": false,
   "peerDependencies": {

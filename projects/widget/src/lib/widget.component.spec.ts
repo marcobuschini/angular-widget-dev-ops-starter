@@ -1,7 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-} from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { expect, jest } from '@jest/globals'
 
@@ -13,13 +10,13 @@ import { ParkingSlot } from './parkingslot'
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
-import { BrowserModule, By } from '@angular/platform-browser'
 import { provideHttpClient } from '@angular/common/http'
 import { WidgetModule } from './widget.module'
 import { WidgetService } from './widget.service'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { MatButtonModule } from '@angular/material/button'
+import { By } from '@angular/platform-browser'
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent
@@ -48,7 +45,7 @@ describe('WidgetComponent', () => {
   ]
 
   const setTimeoutPromise = (milliseconds: number): Promise<void> =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(resolve, milliseconds)
     })
 
@@ -69,7 +66,7 @@ describe('WidgetComponent', () => {
         provideHttpClient(),
         provideHttpClientTesting(),
         WidgetService,
-      ]
+      ],
     }).compileComponents()
     fixture = TestBed.createComponent(WidgetComponent)
     component = fixture.componentInstance
@@ -93,37 +90,34 @@ describe('WidgetComponent', () => {
     component.ngOnDestroy()
   })
 
-  it(
-    'should create component with hidden slots, then show, then hide back',
-    async () => {
-      expect(component).toBeTruthy()
+  it('should create component with hidden slots, then show, then hide back', async () => {
+    expect(component).toBeTruthy()
 
-      component.ngOnInit()
+    component.ngOnInit()
 
-      await setTimeoutPromise(1000)
+    await setTimeoutPromise(1000)
 
-      expect(vendorSpy).toHaveBeenCalled()
-      expect(slotsSpy).toHaveBeenCalled()
+    expect(vendorSpy).toHaveBeenCalled()
+    expect(slotsSpy).toHaveBeenCalled()
 
-      expect(fixture).toMatchSnapshot()
+    expect(fixture).toMatchSnapshot()
 
-      let button = fixture.debugElement.queryAll(By.css('button'))[1]
-        .nativeElement as HTMLButtonElement
-      button.click()
-      fixture.detectChanges()
-      await setTimeoutPromise(1000)
+    let button = fixture.debugElement.queryAll(By.css('button'))[1]
+      .nativeElement as HTMLButtonElement
+    button.click()
+    fixture.detectChanges()
+    await setTimeoutPromise(1000)
 
-      expect(fixture).toMatchSnapshot()
+    expect(fixture).toMatchSnapshot()
 
-      button = fixture.debugElement.queryAll(By.css('button'))[1]
-        .nativeElement as HTMLButtonElement
-      button.click()
-      fixture.detectChanges()
-      await setTimeoutPromise(1000)
+    button = fixture.debugElement.queryAll(By.css('button'))[1]
+      .nativeElement as HTMLButtonElement
+    button.click()
+    fixture.detectChanges()
+    await setTimeoutPromise(1000)
 
-      expect(fixture).toMatchSnapshot()
-    }
-  )
+    expect(fixture).toMatchSnapshot()
+  })
 
   it('should add to cart', () => {
     component.ngOnInit()

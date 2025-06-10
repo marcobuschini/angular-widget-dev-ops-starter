@@ -4,13 +4,16 @@
   "newProjectRoot": "projects",
   "projects": {
     "widget": {
-      "projectType": "library",
       "root": "projects/widget",
+      "projectType": "library",
       "sourceRoot": "projects/widget/src",
-      "prefix": "lib",
+      "prefix": "mlb",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr"
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/widget/ng-package.json"
+          }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
@@ -35,6 +38,6 @@
     }
   },
   "cli": {
-    "analytics": "2a77c529-1e4f-47be-8028-b14a5633a5f8"
+    "analytics": false
   }
 }

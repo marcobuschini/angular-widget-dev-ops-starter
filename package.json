@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "npx ng",
     "build": "npx ng build widget",
+    "build:prod": "npx ng build widget -c production",
     "test": "npx jest --coverage",
     "test:ci": "npx jest --coverage --coverageReporters lcovonly",
     "lint": "npx ng lint",

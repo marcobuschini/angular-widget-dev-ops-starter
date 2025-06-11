@@ -4,28 +4,21 @@
   "newProjectRoot": "projects",
   "projects": {
     "widget": {
-      "projectType": "library",
       "root": "projects/widget",
+      "projectType": "library",
       "sourceRoot": "projects/widget/src",
-      "prefix": "lib",
+      "prefix": "mlb",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/widget/tsconfig.lib.json",
             "project": "projects/widget/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/widget/tsconfig.lib.prod.json"
-            }
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
             "main": "projects/widget/src/test.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
@@ -44,9 +37,7 @@
       }
     }
   },
-  "defaultProject": "widget",
   "cli": {
-    "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "analytics": false
   }
 }

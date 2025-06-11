@@ -1,12 +1,14 @@
-import { TestBed, inject, fakeAsync, flush } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing'
 
 import { WidgetService } from './widget.service'
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing'
 import { Vendor } from './vendor'
 import { ParkingSlot } from './parkingslot'
+import { provideHttpClient } from '@angular/common/http'
+import { firstValueFrom } from 'rxjs'
 
 const dummyVendor: Vendor = {
   name: 'Test Vendor',
@@ -25,31 +27,33 @@ const dummyParkingSlots: ParkingSlot[] = [
 
 describe('WidgetService', () => {
   let httpMock: HttpTestingController
-  let service: WidgetService
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      providers: [
+        WidgetService,
+        provideHttpClient(),
+        provideHttpClientTesting(),
+      ],
     })
   })
 
-  beforeEach(inject([HttpTestingController], (mock: HttpTestingController) => {
-    service = TestBed.inject(WidgetService)
-    httpMock = mock
-  }))
+  beforeEach(() => {
+    httpMock = TestBed.inject(HttpTestingController)
+  })
 
   afterEach(() => {
     httpMock.verify()
   })
 
   it('should be created', () => {
+    const service = TestBed.inject(WidgetService)
     expect(service).toBeTruthy()
   })
 
-  it('should load a vendor features', fakeAsync(async () => {
-    service.getVendorFeatures(dummyVendor).subscribe(features => {
-      expect(features).toEqual(dummyVendor.features)
-    })
+  it('should load a vendor features', async () => {
+    const service = TestBed.inject(WidgetService)
+    const features = firstValueFrom(service.getVendorFeatures(dummyVendor))
 
     const req = httpMock.expectOne(
       '/assets/vendor/' +
@@ -59,11 +63,12 @@ describe('WidgetService', () => {
 
     req.flush(dummyVendor.features)
 
-    flush()
-  }))
+    expect(await features).toEqual(dummyVendor.features)
+  })
 
-  it('should load a vendor parking slots', fakeAsync(async () => {
-    service.getParkingSlots(dummyVendor).subscribe(slots => {
+  it('should load a vendor parking slots', () => {
+    const service = TestBed.inject(WidgetService)
+    service.getParkingSlots(dummyVendor).subscribe((slots) => {
       expect(slots).toEqual(dummyParkingSlots)
     })
 
@@ -74,7 +79,5 @@ describe('WidgetService', () => {
     )
 
     req.flush(dummyParkingSlots)
-
-    flush()
-  }))
+  })
 })

@@ -26,8 +26,16 @@ module.exports = {
   coverageReporters: ['lcovonly', 'html', 'text'],
   coverageDirectory: 'tests/coverage',
   roots: ['<rootDir>/src'],
-  transform: {
-    '^.+\\.tsx?$': 'jest-preset-angular',
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.(html|svg)$',
+    },
   },
+  transform: {
+    //'^.+\\.tsx?$': 'jest-preset-angular',
+    '^.+\\.(ts|tsx|js|jsx|html|svg)$': 'jest-preset-angular',
+  },
+  transformIgnorePatterns: ['node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 }

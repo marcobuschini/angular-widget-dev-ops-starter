@@ -16,12 +16,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '12'
+          node-version: '22'
       - run: npm install
       - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
       - run: chmod +x ./cc-test-reporter
       - run: ./cc-test-reporter before-build
-      - run: npm run test:ci
+      - run: npm run test
       - run: mkdir coverage
       - run: mv tests/coverage/lcov.info coverage/lcov.info
       - run: ./cc-test-reporter after-build -t lcov

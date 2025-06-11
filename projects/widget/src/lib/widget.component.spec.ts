@@ -1,30 +1,33 @@
-import {
-  ComponentFixture,
-  TestBed,
-  async as realAsync,
-  fakeAsync,
-  flush,
-  flushMicrotasks,
-} from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+
+import { expect, jest } from '@jest/globals'
 
 import { WidgetComponent } from './widget.component'
 import { Vendor } from './vendor'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { of, Observable } from 'rxjs'
+import { provideHttpClientTesting } from '@angular/common/http/testing'
+import { Observable, of } from 'rxjs'
 import { ParkingSlot } from './parkingslot'
-import { Feature } from './feature'
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
 import { MatListModule } from '@angular/material/list'
+import { provideHttpClient } from '@angular/common/http'
+import { WidgetModule } from './widget.module'
+import { WidgetService } from './widget.service'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
+import { MatButtonModule } from '@angular/material/button'
 import { By } from '@angular/platform-browser'
+import { Feature } from './feature'
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent
   let fixture: ComponentFixture<WidgetComponent>
 
-  let vendorSpy: jest.SpyInstance<Observable<Feature[]>>
-  let slotsSpy: jest.SpyInstance<Observable<ParkingSlot[]>>
-  let addSpy: jest.SpyInstance<void, [ParkingSlot?]>
+  let vendorSpy: jest.SpiedFunction<(vendor: Vendor) => Observable<Feature[]>>
+  let slotsSpy: jest.SpiedFunction<
+    (vendor: Vendor) => Observable<ParkingSlot[]>
+  >
+  let addSpy: jest.SpiedFunction<(value?: ParkingSlot) => void>
 
   const dummyVendor: Vendor = {
     name: 'Test Vendor',
@@ -45,25 +48,34 @@ describe('WidgetComponent', () => {
   ]
 
   const setTimeoutPromise = (milliseconds: number): Promise<void> =>
-    new Promise(resolve => {
+    new Promise((resolve) => {
       setTimeout(resolve, milliseconds)
     })
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      declarations: [WidgetComponent],
+    await TestBed.configureTestingModule({
       imports: [
+        CommonModule,
+        MatButtonModule,
         MatCardModule,
         MatDividerModule,
         MatListModule,
-        HttpClientTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        WidgetModule,
+        WidgetComponent,
       ],
-    })
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        WidgetService,
+      ],
+    }).compileComponents()
+    fixture = TestBed.createComponent(WidgetComponent)
+    component = fixture.componentInstance
   })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WidgetComponent)
-    component = fixture.componentInstance
     component.vendor = dummyVendor
     vendorSpy = jest
       .spyOn(component.service, 'getVendorFeatures')
@@ -72,6 +84,7 @@ describe('WidgetComponent', () => {
       .spyOn(component.service, 'getParkingSlots')
       .mockReturnValue(of(dummySlots))
     addSpy = jest.spyOn(component.buying, 'emit')
+    component.ngOnInit()
 
     fixture.detectChanges()
   })
@@ -80,37 +93,34 @@ describe('WidgetComponent', () => {
     component.ngOnDestroy()
   })
 
-  it(
-    'should create component with hidden slots, then show, then hide back',
-    realAsync(async () => {
-      expect(component).toBeTruthy()
+  it('should create component with hidden slots, then show, then hide back', async () => {
+    expect(component).toBeTruthy()
 
-      component.ngOnInit()
+    component.ngOnInit()
 
-      await setTimeoutPromise(1000)
+    await setTimeoutPromise(1000)
 
-      expect(vendorSpy).toHaveBeenCalled()
-      expect(slotsSpy).toHaveBeenCalled()
+    expect(vendorSpy).toHaveBeenCalled()
+    expect(slotsSpy).toHaveBeenCalled()
 
-      expect(fixture).toMatchSnapshot()
+    expect(fixture).toMatchSnapshot()
 
-      let button = fixture.debugElement.queryAll(By.css('button'))[1]
-        .nativeElement as HTMLButtonElement
-      button.click()
-      fixture.detectChanges()
-      await setTimeoutPromise(1000)
+    let button = fixture.debugElement.queryAll(By.css('button'))[1]
+      .nativeElement as HTMLButtonElement
+    button.click()
+    fixture.detectChanges()
+    await setTimeoutPromise(1000)
 
-      expect(fixture).toMatchSnapshot()
+    expect(fixture).toMatchSnapshot()
 
-      button = fixture.debugElement.queryAll(By.css('button'))[1]
-        .nativeElement as HTMLButtonElement
-      button.click()
-      fixture.detectChanges()
-      await setTimeoutPromise(1000)
+    button = fixture.debugElement.queryAll(By.css('button'))[1]
+      .nativeElement as HTMLButtonElement
+    button.click()
+    fixture.detectChanges()
+    await setTimeoutPromise(1000)
 
-      expect(fixture).toMatchSnapshot()
-    })
-  )
+    expect(fixture).toMatchSnapshot()
+  })
 
   it('should add to cart', () => {
     component.ngOnInit()

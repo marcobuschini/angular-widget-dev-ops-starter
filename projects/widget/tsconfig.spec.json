@@ -5,6 +5,8 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "target": "es2022",
+    "module": "commonjs",
     "types": ["jest", "node"]
   },
   "files": ["src/test.ts"],

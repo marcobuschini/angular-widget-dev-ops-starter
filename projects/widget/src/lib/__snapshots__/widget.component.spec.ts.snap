@@ -4,83 +4,87 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 <mlb-parking-widget
   buying={[Function EventEmitter_]}
   features={[Function Array]}
-  features$={[Function Subscriber]}
+  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function Subscriber]}
+  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Object]}
 >
   <mat-card
-    class="mat-card mat-focus-indicator"
+    class="mat-mdc-card mdc-card"
   >
     <mat-card-title
-      class="mat-card-title"
+      class="mat-mdc-card-title"
     >
       Test Vendor
     </mat-card-title>
     <mat-card-subtitle
-      class="mat-card-subtitle"
+      class="mat-mdc-card-subtitle"
     >
       This is a test vendor
     </mat-card-subtitle>
     <mat-card-content
-      class="mat-card-content"
+      class="mat-mdc-card-content"
     >
       <mat-list
-        class="mat-list mat-list-base"
+        aria-disabled="false"
+        class="mat-mdc-list mat-mdc-list-base mdc-list"
         role="list"
       >
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 1 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 1
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 2 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 2
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 3 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 3
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
       </mat-list>
       <mat-divider
@@ -88,11 +92,7 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
         class="mat-divider mat-divider-horizontal"
         role="separator"
       />
-      <div
-        fxlayout.gt-xs="row"
-        fxlayout.lt-sm="column"
-        fxlayoutalign="space-between"
-      >
+      <div>
         <div>
            Slot 1 
           <button
@@ -116,83 +116,87 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 <mlb-parking-widget
   buying={[Function EventEmitter_]}
   features={[Function Array]}
-  features$={[Function Subscriber]}
+  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function Subscriber]}
+  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Object]}
 >
   <mat-card
-    class="mat-card mat-focus-indicator"
+    class="mat-mdc-card mdc-card"
   >
     <mat-card-title
-      class="mat-card-title"
+      class="mat-mdc-card-title"
     >
       Test Vendor
     </mat-card-title>
     <mat-card-subtitle
-      class="mat-card-subtitle"
+      class="mat-mdc-card-subtitle"
     >
       This is a test vendor
     </mat-card-subtitle>
     <mat-card-content
-      class="mat-card-content"
+      class="mat-mdc-card-content"
     >
       <mat-list
-        class="mat-list mat-list-base"
+        aria-disabled="false"
+        class="mat-mdc-list mat-mdc-list-base mdc-list"
         role="list"
       >
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 1 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 1
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 2 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 2
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 3 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 3
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
       </mat-list>
       <mat-divider
@@ -200,11 +204,7 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
         class="mat-divider mat-divider-horizontal"
         role="separator"
       />
-      <div
-        fxlayout.gt-xs="row"
-        fxlayout.lt-sm="column"
-        fxlayoutalign="space-between"
-      >
+      <div>
         <div>
            Slot 1 
           <button
@@ -218,42 +218,45 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
              Collapse 
           </button>
           <mat-list
-            class="mat-list mat-list-base"
+            aria-disabled="false"
+            class="mat-mdc-list mat-mdc-list-base mdc-list"
             role="list"
           >
             <mat-list-item
-              class="mat-list-item mat-focus-indicator"
+              aria-disabled="false"
+              class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
               role="listitem"
             >
-              <div
-                class="mat-list-item-content"
+              <span
+                class="mdc-list-item__content"
               >
-                <div
-                  class="mat-list-item-ripple mat-ripple"
-                  mat-ripple=""
-                />
-                <div
-                  class="mat-list-text"
-                />
-                Feature 1 
-              </div>
+                <span
+                  class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+                >
+                  Feature 1 
+                </span>
+              </span>
+              <div
+                class="mat-focus-indicator"
+              />
             </mat-list-item>
             <mat-list-item
-              class="mat-list-item mat-focus-indicator"
+              aria-disabled="false"
+              class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
               role="listitem"
             >
-              <div
-                class="mat-list-item-content"
+              <span
+                class="mdc-list-item__content"
               >
-                <div
-                  class="mat-list-item-ripple mat-ripple"
-                  mat-ripple=""
-                />
-                <div
-                  class="mat-list-text"
-                />
-                Feature 2 
-              </div>
+                <span
+                  class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+                >
+                  Feature 2 
+                </span>
+              </span>
+              <div
+                class="mat-focus-indicator"
+              />
             </mat-list-item>
           </mat-list>
         </div>
@@ -267,83 +270,87 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 <mlb-parking-widget
   buying={[Function EventEmitter_]}
   features={[Function Array]}
-  features$={[Function Subscriber]}
+  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function Subscriber]}
+  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Object]}
 >
   <mat-card
-    class="mat-card mat-focus-indicator"
+    class="mat-mdc-card mdc-card"
   >
     <mat-card-title
-      class="mat-card-title"
+      class="mat-mdc-card-title"
     >
       Test Vendor
     </mat-card-title>
     <mat-card-subtitle
-      class="mat-card-subtitle"
+      class="mat-mdc-card-subtitle"
     >
       This is a test vendor
     </mat-card-subtitle>
     <mat-card-content
-      class="mat-card-content"
+      class="mat-mdc-card-content"
     >
       <mat-list
-        class="mat-list mat-list-base"
+        aria-disabled="false"
+        class="mat-mdc-list mat-mdc-list-base mdc-list"
         role="list"
       >
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 1 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 1
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 2 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 2
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
         <mat-list-item
-          class="mat-list-item mat-focus-indicator"
+          aria-disabled="false"
+          class="mat-mdc-list-item mdc-list-item mat-mdc-list-item-single-line mdc-list-item--with-one-line"
           role="listitem"
         >
-          <div
-            class="mat-list-item-content"
+          <span
+            class="mdc-list-item__content"
           >
-            <div
-              class="mat-list-item-ripple mat-ripple"
-              mat-ripple=""
-            />
-            <div
-              class="mat-list-text"
-            />
-            Feature 3 
-          </div>
+            <span
+              class="mat-mdc-list-item-unscoped-content mdc-list-item__primary-text"
+            >
+              Feature 3
+            </span>
+          </span>
+          <div
+            class="mat-focus-indicator"
+          />
         </mat-list-item>
       </mat-list>
       <mat-divider
@@ -351,11 +358,7 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
         class="mat-divider mat-divider-horizontal"
         role="separator"
       />
-      <div
-        fxlayout.gt-xs="row"
-        fxlayout.lt-sm="column"
-        fxlayoutalign="space-between"
-      >
+      <div>
         <div>
            Slot 1 
           <button

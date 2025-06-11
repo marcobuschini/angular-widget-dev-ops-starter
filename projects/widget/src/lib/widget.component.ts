@@ -5,20 +5,26 @@ import {
   Input,
   Output,
   EventEmitter,
+  inject,
 } from '@angular/core'
 import { WidgetService } from './widget.service'
 import { ParkingSlot } from './parkingslot'
 import { Feature } from './feature'
 import { Subscription } from 'rxjs'
 import { Vendor } from './vendor'
-
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatListModule } from '@angular/material/list'
 /** The parking widget as described in the repository. */
 @Component({
   selector: 'mlb-parking-widget',
   templateUrl: 'widget.component.html',
   styleUrls: ['widget.component.css'],
+  imports: [MatCardModule, MatDividerModule, MatListModule],
 })
 export class WidgetComponent implements OnInit, OnDestroy {
+  public service = inject(WidgetService)
+
   /** This input property receives the `Vendor` to display in the widget. */
   @Input()
   public vendor: Vendor
@@ -46,10 +52,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
   private features$: Subscription
 
   /** The constructor injects the `WidgetService` in the component. */
-  public constructor(
-    /** The injected backend service. */
-    public service: WidgetService
-  ) {}
+  public constructor() {}
 
   /**
    * Loads parking slots, and vendor features from the backend as soon as the
@@ -58,7 +61,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
   public ngOnInit() {
     this.parkingSlots$ = this.service
       .getParkingSlots(this.vendor)
-      .subscribe(slots => {
+      .subscribe((slots) => {
         this.parkingSlots = slots
         this.showDetails = []
         for (let index = 0; index < this.parkingSlots.length; index++) {
@@ -67,7 +70,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
       })
     this.features$ = this.service
       .getVendorFeatures(this.vendor)
-      .subscribe(features => {
+      .subscribe((features) => {
         this.features = features
       })
   }

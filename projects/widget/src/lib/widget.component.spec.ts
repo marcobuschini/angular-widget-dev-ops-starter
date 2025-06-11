@@ -5,7 +5,7 @@ import { expect, jest } from '@jest/globals'
 import { WidgetComponent } from './widget.component'
 import { Vendor } from './vendor'
 import { provideHttpClientTesting } from '@angular/common/http/testing'
-import { of } from 'rxjs'
+import { Observable, of } from 'rxjs'
 import { ParkingSlot } from './parkingslot'
 import { MatCardModule } from '@angular/material/card'
 import { MatDividerModule } from '@angular/material/divider'
@@ -17,14 +17,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { MatButtonModule } from '@angular/material/button'
 import { By } from '@angular/platform-browser'
+import { Feature } from 'widget'
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent
   let fixture: ComponentFixture<WidgetComponent>
 
-  let vendorSpy: any
-  let slotsSpy: any
-  let addSpy: any
+  let vendorSpy: jest.SpiedFunction<(vendor: Vendor) => Observable<Feature[]>>
+  let slotsSpy: jest.SpiedFunction<
+    (vendor: Vendor) => Observable<ParkingSlot[]>
+  >
+  let addSpy: jest.SpiedFunction<(value?: ParkingSlot) => void>
 
   const dummyVendor: Vendor = {
     name: 'Test Vendor',

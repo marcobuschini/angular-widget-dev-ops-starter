@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { MatButtonModule } from '@angular/material/button'
 import { By } from '@angular/platform-browser'
-import { Feature } from 'widget'
+import { Feature } from './feature'
 
 describe('WidgetComponent', () => {
   let component: WidgetComponent

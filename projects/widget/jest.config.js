@@ -34,8 +34,24 @@ module.exports = {
   },
   transform: {
     //'^.+\\.tsx?$': 'jest-preset-angular',
-    '^.+\\.(ts|tsx|js|jsx|html|svg)$': 'jest-preset-angular',
+    '^.+\\.(ts|tsx|js|jsx|html|svg)$': [
+      'jest-preset-angular',
+      {
+        tsconfig: '<rootDir>/tsconfig.spec.json',
+        stringifyContentPathRegex: '\\.(html|svg)$',
+      },
+    ],
   },
   transformIgnorePatterns: ['node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)'],
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: [
+    'ts',
+    'tsx',
+    'js',
+    'jsx',
+    'json',
+    'node',
+    'html',
+    'mjs',
+    'svg',
+  ],
 }

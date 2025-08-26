@@ -2,10 +2,9 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  Input,
-  Output,
-  EventEmitter,
+  input,
   inject,
+  output,
 } from '@angular/core'
 import { WidgetService } from './widget.service'
 import { ParkingSlot } from './parkingslot'
@@ -26,12 +25,10 @@ export class WidgetComponent implements OnInit, OnDestroy {
   public service = inject(WidgetService)
 
   /** This input property receives the `Vendor` to display in the widget. */
-  @Input()
-  public vendor: Vendor
+  public vendor = input<Vendor>()
 
   /** This output property signals what parking slot we want to buy. */
-  @Output()
-  public buying = new EventEmitter<ParkingSlot>()
+  public buying = output<ParkingSlot>()
 
   /** The array of `ParkingSlots` to be shown in the widget. */
   public parkingSlots: ParkingSlot[]
@@ -60,7 +57,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
    */
   public ngOnInit() {
     this.parkingSlots$ = this.service
-      .getParkingSlots(this.vendor)
+      .getParkingSlots(this.vendor())
       .subscribe((slots) => {
         this.parkingSlots = slots
         this.showDetails = []
@@ -69,7 +66,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
         }
       })
     this.features$ = this.service
-      .getVendorFeatures(this.vendor)
+      .getVendorFeatures(this.vendor())
       .subscribe((features) => {
         this.features = features
       })

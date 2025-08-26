@@ -2,14 +2,14 @@
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 1`] = `
 <mlb-parking-widget
-  buying={[Function EventEmitter_]}
+  buying={[Function OutputEmitterRef]}
   features={[Function Array]}
   features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
   parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
-  vendor={[Function Object]}
+  vendor={[Function Function]}
 >
   <mat-card
     class="mat-mdc-card mdc-card"
@@ -103,7 +103,7 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
           <button
             mat-stroked-button=""
           >
-             Expand 
+            Expand
           </button>
         </div>
       </div>
@@ -114,14 +114,14 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 2`] = `
 <mlb-parking-widget
-  buying={[Function EventEmitter_]}
+  buying={[Function OutputEmitterRef]}
   features={[Function Array]}
   features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
   parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
-  vendor={[Function Object]}
+  vendor={[Function Function]}
 >
   <mat-card
     class="mat-mdc-card mdc-card"
@@ -268,14 +268,14 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 3`] = `
 <mlb-parking-widget
-  buying={[Function EventEmitter_]}
+  buying={[Function OutputEmitterRef]}
   features={[Function Array]}
   features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
   parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
-  vendor={[Function Object]}
+  vendor={[Function Function]}
 >
   <mat-card
     class="mat-mdc-card mdc-card"
@@ -369,7 +369,7 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
           <button
             mat-stroked-button=""
           >
-             Expand 
+            Expand
           </button>
         </div>
       </div>

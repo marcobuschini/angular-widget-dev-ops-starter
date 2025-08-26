@@ -1,48 +1,38 @@
 <mat-card>
-  <mat-card-title>{{ vendor.name }}</mat-card-title>
-  <mat-card-subtitle>{{ vendor.description }}</mat-card-subtitle>
+  <mat-card-title>{{ vendor().name }}</mat-card-title>
+  <mat-card-subtitle>{{ vendor().description }}</mat-card-subtitle>
   <mat-card-content>
     <mat-list role="list">
-      @for(feature of features; track feature) {
-      <mat-list-item role="listitem">{{ feature.name }}</mat-list-item>
+      @for (feature of features; track feature) {
+        <mat-list-item role="listitem">{{ feature.name }}</mat-list-item>
       }
     </mat-list>
     <mat-divider></mat-divider>
     <div>
-      @for(slot of parkingSlots; track slot) {
-      <div>
-        {{ slot.name }}
-        <button mat-stroked-button (click)="addToCart(slot)">
-          Add to cart
-        </button>
-        @if(!showDetails[slot.id]) {
-        <button
-          mat-stroked-button
-          (click)="expand(slot)"
-        >
-          Expand
-        </button>
-        }
-        @if(showDetails[slot.id]) {
-        <button
-          mat-stroked-button
-          (click)="collapse(slot)"
-        >
-          Collapse
-        </button>
-        }
-        @if(showDetails[slot.id]) {
-        <mat-list role="list">
-          @for(feature of slot.features; track feature) {
-          <mat-list-item
-            role="listitem"
-            role="listitem"
-            >{{ feature }}
-          </mat-list-item>
+      @for (slot of parkingSlots; track slot) {
+        <div>
+          {{ slot.name }}
+          <button mat-stroked-button (click)="addToCart(slot)">
+            Add to cart
+          </button>
+          @if (!showDetails[slot.id]) {
+            <button mat-stroked-button (click)="expand(slot)">Expand</button>
           }
-        </mat-list>
-        }
-      </div>
+          @if (showDetails[slot.id]) {
+            <button mat-stroked-button (click)="collapse(slot)">
+              Collapse
+            </button>
+          }
+          @if (showDetails[slot.id]) {
+            <mat-list role="list">
+              @for (feature of slot.features; track feature) {
+                <mat-list-item role="listitem" role="listitem"
+                  >{{ feature }}
+                </mat-list-item>
+              }
+            </mat-list>
+          }
+        </div>
       }
     </div>
   </mat-card-content>

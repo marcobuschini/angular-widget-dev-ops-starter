@@ -71,12 +71,14 @@ describe('WidgetComponent', () => {
         WidgetService,
       ],
     }).compileComponents()
+
     fixture = TestBed.createComponent(WidgetComponent)
+    fixture.componentRef.setInput('vendor', dummyVendor)
+    fixture.detectChanges()
     component = fixture.componentInstance
   })
 
   beforeEach(() => {
-    component.vendor = dummyVendor
     vendorSpy = jest
       .spyOn(component.service, 'getVendorFeatures')
       .mockReturnValue(of(dummyVendor.features))

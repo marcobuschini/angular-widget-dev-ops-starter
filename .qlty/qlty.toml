@@ -66,19 +66,6 @@ default = true
 name = "actionlint"
 
 [[plugin]]
-name = "eslint"
-version = "9.28.0"
-package_file = "package.json"
-package_filters = ["eslint", "jest", "prettier"]
-
-[[plugin]]
-name = "markdownlint"
-drivers = [
-  "lint",
-]
-mode = "comment"
-
-[[plugin]]
 name = "prettier"
 version = "3.5.3"
 package_file = "package.json"
@@ -87,13 +74,3 @@ package_filters = ["prettier"]
 [[plugin]]
 name = "ripgrep"
 mode = "comment"
-
-[[plugin]]
-name = "trivy"
-drivers = [
-  "config",
-  "fs-vuln",
-]
-
-[[plugin]]
-name = "yamllint"

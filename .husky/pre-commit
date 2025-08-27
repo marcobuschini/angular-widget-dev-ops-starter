@@ -1,1 +1,1 @@
-npx pretty-quick --staged && ng lint && npm run test
+npx pretty-quick --staged && ng lint && qlty smells --all && npm run test

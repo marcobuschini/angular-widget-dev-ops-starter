@@ -3,8 +3,6 @@ on: [push, pull_request]
 jobs:
   unit-testing:
     runs-on: ubuntu-latest
-    env:
-      CC_TEST_REPORTER_ID: e77e64f55c272bb2491a16805bcbe24f17e16831002890c23dee0034f4acb8eb
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -18,13 +16,9 @@ jobs:
         with:
           node-version: '22'
       - run: npm install
-      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
-      - run: npm run test
+      - run: npm run test:ci
       - run: mkdir coverage
       - run: mv tests/coverage/lcov.info coverage/lcov.info
-      - run: ./cc-test-reporter after-build -t lcov
       - name: Upload Coveralls statistics
         uses: coverallsapp/github-action@master
         with:

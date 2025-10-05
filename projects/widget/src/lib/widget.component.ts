@@ -43,10 +43,10 @@ export class WidgetComponent implements OnInit, OnDestroy {
   public features: Feature[]
 
   /** The subscription that loads parking slots from the backend. */
-  private parkingSlots$: Subscription
+  private _parkingSlots$: Subscription
 
   /** The subscription that loads vendor features from the backend. */
-  private features$: Subscription
+  private _features$: Subscription
 
   /** The constructor injects the `WidgetService` in the component. */
   public constructor() {}
@@ -56,7 +56,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
    * widget is initialized.
    */
   public ngOnInit() {
-    this.parkingSlots$ = this.service
+    this._parkingSlots$ = this.service
       .getParkingSlots(this.vendor())
       .subscribe((slots) => {
         this.parkingSlots = slots
@@ -65,7 +65,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
           this.showDetails[index] = false
         }
       })
-    this.features$ = this.service
+    this._features$ = this.service
       .getVendorFeatures(this.vendor())
       .subscribe((features) => {
         this.features = features
@@ -74,8 +74,8 @@ export class WidgetComponent implements OnInit, OnDestroy {
 
   /** Frees up resources when disposing the component. */
   public ngOnDestroy() {
-    this.parkingSlots$.unsubscribe()
-    this.features$.unsubscribe()
+    this._parkingSlots$.unsubscribe()
+    this._features$.unsubscribe()
   }
 
   /**

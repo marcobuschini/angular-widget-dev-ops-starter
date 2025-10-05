@@ -15,7 +15,8 @@ export class WidgetService {
   public http = inject(HttpClient)
 
   /** A list of parking slots loaded from the remote server. */
-  private parkingSlots: ParkingSlot[]
+  private _
+  parkingSlots: ParkingSlot[]
 
   /**
    * The constructor injects the HttpClient to conntact the remote server.

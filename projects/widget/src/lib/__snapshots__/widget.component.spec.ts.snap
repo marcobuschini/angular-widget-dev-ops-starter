@@ -2,11 +2,11 @@
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 1`] = `
 <mlb-parking-widget
+  _features$={[Function SafeSubscriber]}
+  _parkingSlots$={[Function SafeSubscriber]}
   buying={[Function OutputEmitterRef]}
   features={[Function Array]}
-  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Function]}
@@ -114,11 +114,11 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 2`] = `
 <mlb-parking-widget
+  _features$={[Function SafeSubscriber]}
+  _parkingSlots$={[Function SafeSubscriber]}
   buying={[Function OutputEmitterRef]}
   features={[Function Array]}
-  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Function]}
@@ -268,11 +268,11 @@ exports[`WidgetComponent should create component with hidden slots, then show, t
 
 exports[`WidgetComponent should create component with hidden slots, then show, then hide back 3`] = `
 <mlb-parking-widget
+  _features$={[Function SafeSubscriber]}
+  _parkingSlots$={[Function SafeSubscriber]}
   buying={[Function OutputEmitterRef]}
   features={[Function Array]}
-  features$={[Function SafeSubscriber]}
   parkingSlots={[Function Array]}
-  parkingSlots$={[Function SafeSubscriber]}
   service={[Function WidgetService]}
   showDetails={[Function Array]}
   vendor={[Function Function]}
